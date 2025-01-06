@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(100% - 22px);
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Percentage Comparison</h1>
+        <p>Enter two numbers to find the percentage of the first relative to the second:</p>
+        <input type="number" id="number1" placeholder="Enter the first number">
+        <input type="number" id="number2" placeholder="Enter the second number">
+        <button onclick="calculatePercentage()">Compare</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculatePercentage() {
+            const num1 = parseFloat(document.getElementById('number1').value);
+            const num2 = parseFloat(document.getElementById('number2').value);
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(num1) || isNaN(num2) || num2 === 0) {
+                resultDiv.innerHTML = "<span style='color: red;'>Please enter valid numbers, and the second number cannot be zero.</span>";
+                return;
+            }
+
+            const percentage = (num1 / num2) * 100;
+            resultDiv.innerHTML = `The first number is <strong>${percentage.toFixed(2)}%</strong> of the second number.`;
+        }
+    </script>
+</body>
+</html>
