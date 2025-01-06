@@ -6,7 +6,7 @@ This is a simple and interactive web application that calculates the percentage 
 
 - **User-Friendly Interface**: Clean design and simple layout.
 - **Real-Time Calculations**: Compare two numbers and get the result instantly.
-- **Responsive Design**: Works well on both desktop and mobile devices.
+- **Responsive Design**: Works well on both desktop and mobile devices. (but don't have bootstrap)
 - **Error Handling**: Provides validation for invalid inputs and prevents division by zero.
 
 ## How to Use
